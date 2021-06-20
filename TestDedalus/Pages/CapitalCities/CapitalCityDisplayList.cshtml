@@ -1,0 +1,44 @@
+﻿@page
+@model TestDedalus.Pages.CapitalCities.CapitalCityDisplayListModel
+@{
+    ViewData["Title"] = "Countries & capitals";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Capital City Search</h1>
+
+        <p>
+            <a asp-page="./Create">Full list of countries with their respective capitals</a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Region</th>
+            </tr>
+            @foreach (var item in Model.CapitalCitiesDisplayList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapitalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapitalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryName)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

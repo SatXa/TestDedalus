@@ -1,0 +1,70 @@
+﻿@page
+@model TestDedalus.Pages.CapitalCities.CapitalCitySearchModel
+@{
+    ViewData["Title"] = "Super Cool Capital City Search";
+}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Capital City Search</h1>
+
+        <p>
+            Search for a capital city from its country's name or ISO code
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <select asp-for="searchString" asp-items="@(Model.CapitalCitiesSearchList)">
+            <option value="">Pick one</option>
+        </select>
+
+
+        @*<select asp-for="searchString" asp-items="@(Model.CapitalCitiesSearchList)">
+                <option value="">Pick one</option>
+            </select>*@
+
+        @*@Html.DropDownListFor(
+                x => Model.,
+                new SelectList(Model.CapitalCitiesSearchList, "Value", "Text"),
+                //htmlAttributes: new { @class = "form-control", id = "Country", @required = true }
+                "--- Select country ---"
+            )*@
+
+        @*@Html.ValidationMessageFor(x => x.CustomerEditViewModel.SelectedCountryId, "", new { @class = "text-danger" })*@
+
+        @*<form>
+                <select asp-for="CapitalCitiesSearchList" asp-items="Model.CapitalCitiesSearchList" multiple>
+                    <option value="">All</option>
+                </select>
+                <input type="submit" value="Filter" />
+            </form>*@
+
+        @*<input type="text" id="searchBox" name="searchBox">
+            <br>*@
+
+        @*@foreach (varitem in Model.CapitalCitiesSearchList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapitalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapitalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryName)
+                    </td>
+                </tr>
+            }*@
+    </div>
+</div>
